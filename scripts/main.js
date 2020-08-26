@@ -3,6 +3,7 @@ import { createAsparagus } from './seeds/asparagus.js';
 import { addPlant, usePlants } from './field.js';
 import { plantSeeds } from './tractor.js';
 import { harvestPlants } from './harvester.js';
+import { Catalog } from './catalog.js';
 // const { createPlan } = require("./plan");
 
 console.log("Welcome to the main module")
@@ -10,14 +11,15 @@ console.log("Welcome to the main module")
 const yearlyPlan = createPlan()
 // console.log(yearlyPlan)
 
-const plantedSeeds = plantSeeds(yearlyPlan)
+plantSeeds(yearlyPlan)
 
 // const asparagusSeed = createAsparagus()
 // console.log(asparagusSeed)
 // const seed = { }
 // addPlant(seed)
 
-let usedPlants = usePlants()
-let harvested = harvestPlants(usedPlants)
-console.log(usedPlants)
-console.log(harvested)
+const usedPlants = usePlants()
+const harvested = harvestPlants(usedPlants)
+console.log("Here is our field",usedPlants)
+console.log("This is our harvested", harvested)
+Catalog(harvested)

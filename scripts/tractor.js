@@ -7,16 +7,15 @@ import { createWheat } from "./seeds/wheat.js"
 import { addPlant } from "./field.js"
 
 export const plantSeeds = (seed) => {
-    let plan = []
-    for (const y of seed) {
+    for (const row of seed) {
         // console.log("row " + y)
-        for (const x of y) {
-            if (x === "Asparagus") { addPlant(createAsparagus()) }
-            if (x === "Corn") { addPlant(createCorn()) }
-            if (x === "Potato") { addPlant(createPotato()) }
-            if (x === "Soybean") { addPlant(createSoybean()) }
-            if (x === "Sunflower") { addPlant(createSunflower()) }
-            if (x === "Wheat") { addPlant(createWheat()) }
+        for (const plant of row) {
+            if (plant === "Asparagus") { addPlant(createAsparagus()) }
+            if (plant === "Corn") { addPlant(createCorn()) }
+            if (plant === "Potato") { addPlant(createPotato()) }
+            if (plant === "Soybean") { addPlant(createSoybean()) }
+            if (plant === "Sunflower") { addPlant(createSunflower()) }
+            if (plant === "Wheat") { addPlant(createWheat()) }
         }
     }
 }
