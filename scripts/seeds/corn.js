@@ -1,15 +1,15 @@
 export const createCorn = () => {
     const corn = [
         {
-            type: "Corn",
             height: 180,
-            output: 6
+            output: 6,
+            type: "Corn",
         },
         {
-            type: "Corn",
             height: 180,
-            output: 6
+            output: 6,
+            type: "Corn",
         }
     ]
-    return corn
+    return corn.slice()
 }

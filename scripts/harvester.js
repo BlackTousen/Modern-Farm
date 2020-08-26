@@ -11,31 +11,18 @@ export const harvestPlants = (plants) => {
     let harvest = []
     for (const x of plants) {
         var i = 0
-        // console.log(x)
-        // console.log("Is array? " + Array.isArray(x),` or ${x.type}`)
-        if (Array.isArray(x)) {
-            // console.log("Corn Array?", x.isArray)
-            for (const y of x) {
-                while (i < y.output) {
-                    // const corn = {
-                    //     type: "Corn",
-                    //     height: 180,
-                    //     output: 6
-                    // }
-                    harvest.push(createCorn())
-                    i += 1
-                }
+        while (i < x.output) {
+            if (x.type === "Corn") {
+                let corn = createCorn()
+                harvest.push(corn[0])
+            i++
             }
-        }
-        else {
-            while (i < x.output) {
-                if (x.type === "Asparagus") { harvest.push(createAsparagus()) }
-                if (x.type === "Potato") { harvest.push(createPotato()) }
-                if (x.type === "Soybean") { harvest.push(createSoybean()) }
-                if (x.type === "Sunflower") { harvest.push(createSunflower()) }
-                if (x.type === "Wheat") { harvest.push(createWheat()) }
-                i++
-            }
+            if (x.type === "Asparagus") { harvest.push(createAsparagus()) }
+            if (x.type === "Potato") { harvest.push(createPotato()) }
+            if (x.type === "Soybean") { harvest.push(createSoybean()) }
+            if (x.type === "Sunflower") { harvest.push(createSunflower()) }
+            if (x.type === "Wheat") { harvest.push(createWheat()) }
+            i++
         }
     }
     return harvest
